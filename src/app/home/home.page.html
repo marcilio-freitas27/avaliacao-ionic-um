@@ -1,25 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Filmes
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <ion-list>
+  
+    <ion-list *ngFor="let filme of filmes">
       <ion-item>
-        <ion-label></ion-label>
+        
+          <ion-card>
+            <img alt="vingadores" width="200" heigth="400" [src]="filme.cartaz" />
+            <ion-card-header>
+              <ion-card-title>{{filme.titulo}}</ion-card-title>
+              <ion-card-subtitle>Ano de lançamento: {{filme.ano}}</ion-card-subtitle>
+              <ion-text>Diretor: {{filme.diretor}}</ion-text>
+            </ion-card-header>
+          
+            <ion-card-content>
+              País:  {{filme.origem}}
+            </ion-card-content>
+          </ion-card>
+        
       </ion-item>
     </ion-list>
-  </div>
+
 </ion-content>
